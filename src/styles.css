@@ -1,0 +1,29 @@
+body {
+  font-family: sans-serif;
+  background: #f2f2f2;
+  margin: 0;
+  padding: 20px;
+}
+
+main {
+  max-width: 600px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+}
+
+.todo-list {
+  list-style: none;
+  padding: 0;
+}
+
+.todo-list li {
+  padding: 0.5rem;
+  border-bottom: 1px solid #ccc;
+}
+
+.todo-list li.completed {
+  text-decoration: line-through;
+  color: gray;
+}
