@@ -1,0 +1,29 @@
+{
+  "todos": [
+    {
+      "id": 1,
+      "title": "Сделать домашку",
+      "completed": false
+    },
+    {
+      "id": 2,
+      "title": "Прочитать книгу по React",
+      "completed": true
+    },
+    {
+      "id": 3,
+      "title": "Купить продукты",
+      "completed": false
+    },
+    {
+      "id": 4,
+      "title": "Записаться к стоматологу",
+      "completed": false
+    },
+    {
+      "title": "новая задача!",
+      "completed": false,
+      "id": 5
+    }
+  ]
+}
