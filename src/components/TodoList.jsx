@@ -50,7 +50,9 @@ export default function TodoList() {
 
     return (
         <div className="todo-wrapper">
-            <form onSubmit={handleAdd}>
+            <h1>Список дел</h1>
+
+            <form className="todo-form" onSubmit={handleAdd}>
                 <input
                     type="text"
                     value={newTitle}
@@ -60,29 +62,40 @@ export default function TodoList() {
                 <button type="submit">Добавить</button>
             </form>
 
-            <input
-                type="text"
-                value={search}
-                onChange={e => setSearch(e.target.value)}
-                placeholder="Поиск"
-            />
-
-            <button onClick={toggleSort}>
-                Сортировка: {sort ? 'по алфавиту' : 'без сортировки'}
-            </button>
+            <div className="todo-controls">
+                <input
+                    type="text"
+                    value={search}
+                    onChange={e => setSearch(e.target.value)}
+                    placeholder="Поиск"
+                />
+                <button onClick={toggleSort}>
+                    Сортировка: {sort ? 'по алфавиту' : 'без сортировки'}
+                </button>
+            </div>
 
             <ul className="todo-list">
                 {todos.map(todo => (
                     <li
                         key={todo.id}
-                        className={todo.completed ? 'completed' : ''}
+                        className={`todo-item ${todo.completed ? 'completed' : ''}`}
                         onClick={() => toggleComplete(todo)}
                     >
-                        {todo.title}
-                        <button onClick={() => handleDelete(todo.id)}>Удалить</button>
+                        <span>{todo.title}</span>
+                        <button
+                            className="delete-button"
+                            onClick={e => {
+                                e.stopPropagation()
+                                handleDelete(todo.id)
+                            }}
+                            aria-label="Удалить"
+                        >
+                            🗑
+                        </button>
                     </li>
                 ))}
             </ul>
         </div>
     )
+
 }
