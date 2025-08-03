@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { getTodos, searchTodos } from '@/shared/api/todos.js'
+import {  searchTodos } from '@/shared/api/todos.js'
 
 export function useSearchTodos(search, sort, setTodos) {
     useEffect(() => {
@@ -7,9 +7,7 @@ export function useSearchTodos(search, sort, setTodos) {
 
         const fetchData = async () => {
             try {
-                const result = query
-                    ? await searchTodos(query, sort)
-                    : await getTodos()
+                const result = await searchTodos(query, sort)
                 setTodos(result)
             } catch {
                 setTodos([])
