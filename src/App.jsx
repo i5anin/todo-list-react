@@ -1,4 +1,4 @@
-import TodoList from './components/TodoList.jsx';
+import TodoList from './widgets/todo-list/TodoList.jsx';
 import './styles.css';
 
 function App() {
